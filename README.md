@@ -27,10 +27,12 @@ behave as thermodynamically consistent attenuation factors and render the catego
 The framework establishes three structural components:
 
 1. **Filippov–Ricci flow** — evolution of dissipative weights under nonsmooth curvature.
-2. **Instantaneous Markov kernels** — geometric probes, not propagators, producing a dissipative Laplacian  
-   $$
-   \Delta_t=-\dot P_t.
-   $$
+2. **Instantaneous Markov kernels** — geometric probes, not propagators, producing a dissipative Laplacian
+
+$$
+\Delta_t=-\dot P_t.
+$$
+
 3. **Complex dissipative holonomy** — magnitude controlled by dissipation and phase controlled by curvature, producing interference without Hilbert space.
 
 A central result is the emergence of an **integer-valued arithmetic invariant**: for any analytic observable \(L(s)\), with \(L(s)\neq 0\), the induced phase geometry determines a ternary first Chern class
@@ -48,13 +50,13 @@ controlled by the local singularity structure of \(L(s)\).
 ## Visual Summary
 
 <p align="center">
-  <img src="./figures/chern_stratification.png" width="49%">
-  <img src="./figures/dissipative_laplacian.png" width="49%">
+  <img src="figures/chern_stratification.png" alt="Circular Phase Stratification" width="49%">
+  <img src="figures/dissipative_laplacian.png" alt="Dissipative Laplacian" width="49%">
 </p>
 
 <p align="center">
-  <img src="./figures/filippov_ricci_flow.png" width="49%">
-  <img src="./figures/holonomy_interference.png" width="49%">
+  <img src="figures/filippov_ricci_flow.png" alt="Filippov Ricci Flow" width="49%">
+  <img src="figures/holonomy_interference.png" alt="Holonomy Interference" width="49%">
 </p>
 
 ---
@@ -326,7 +328,7 @@ The three regimes correspond to pole-sector, flat-sector and zero-sector behavio
 
 ---
 
-## Scripts
+## Scripts and Generated Figures
 
 ### `chern_stratification.py`
 
@@ -335,6 +337,10 @@ Generates the circular phase stratification of analytic values and computes the 
 $$
 q_L\in\{-1,0,+1\}.
 $$
+
+<p align="center">
+  <img src="figures/chern_stratification.png" alt="Circular Phase Stratification" width="100%">
+</p>
 
 Output:
 
@@ -351,6 +357,10 @@ Constructs instantaneous Markov kernels \(P_t\), verifies the non-semigroup devi
 $$
 \Delta_t=-\dot P_t.
 $$
+
+<p align="center">
+  <img src="figures/dissipative_laplacian.png" alt="Dissipative Laplacian" width="100%">
+</p>
 
 Output:
 
@@ -369,6 +379,10 @@ $$
 =
 \exp(-\Delta\kappa\,t-\Delta\Sigma).
 $$
+
+<p align="center">
+  <img src="figures/filippov_ricci_flow.png" alt="Filippov Ricci Flow" width="100%">
+</p>
 
 Output:
 
@@ -389,6 +403,10 @@ $$
 =
 2e^{-2\Sigma^\ast}(1+\cos\Delta\Phi).
 $$
+
+<p align="center">
+  <img src="figures/holonomy_interference.png" alt="Holonomy Interference" width="100%">
+</p>
 
 Output:
 
