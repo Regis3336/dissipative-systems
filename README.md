@@ -12,34 +12,34 @@
 
 We introduce a unified geometric framework for irreversible systems by equipping small categories with an additive entropy-production functional
 
-\[
+$$
 \Sigma : \mathrm{Mor}(\mathcal C) \to \mathbb R_{\ge 0}.
-\]
+$$
 
 The induced natural weights
 
-\[
-W(f) = e^{-\Sigma(f)}
-\]
+$$
+W(f)=e^{-\Sigma(f)}
+$$
 
-behave as thermodynamically consistent attenuation factors and render the category **causally rigid**: reversible morphisms collapse to identities.
+behave as thermodynamically consistent attenuation factors and render the category **causally rigid**: all reversible morphisms collapse to identities.
 
 The framework establishes three structural components:
 
 1. **Filippov–Ricci flow** — evolution of dissipative weights under nonsmooth curvature.
 2. **Instantaneous Markov kernels** — geometric probes, not propagators, producing a dissipative Laplacian  
-   \[
-   \Delta_t = -\dot P_t.
-   \]
+   $$
+   \Delta_t=-\dot P_t.
+   $$
 3. **Complex dissipative holonomy** — magnitude controlled by dissipation and phase controlled by curvature, producing interference without Hilbert space.
 
-A central result is the emergence of an **integer-valued arithmetic invariant**: for any analytic observable \(L(s)\), with \(L(s) \neq 0\), the induced connection on \(S^2\) has first Chern class
+A central result is the emergence of an **integer-valued arithmetic invariant**: for any analytic observable \(L(s)\), with \(L(s)\neq 0\), the induced phase geometry determines a ternary first Chern class
 
-\[
+$$
 c_1(L(s)) \in \{-1,0,+1\},
-\]
+$$
 
-determined by the local singularity structure of \(L(s)\).
+controlled by the local singularity structure of \(L(s)\).
 
 > **Core thesis:** Irreversibility does not destroy geometry — it reshapes it.
 
@@ -47,13 +47,15 @@ determined by the local singularity structure of \(L(s)\).
 
 ## Visual Summary
 
-| Circular Phase Stratification | Dissipative Laplacian |
-|---|---|
-| ![](figures/chern_stratification.png) | ![](figures/dissipative_laplacian.png) |
+<p align="center">
+  <img src="./figures/chern_stratification.png" width="49%">
+  <img src="./figures/dissipative_laplacian.png" width="49%">
+</p>
 
-| Filippov–Ricci Flow | Holonomy Interference |
-|---|---|
-| ![](figures/filippov_ricci_flow.png) | ![](figures/holonomy_interference.png) |
+<p align="center">
+  <img src="./figures/filippov_ricci_flow.png" width="49%">
+  <img src="./figures/holonomy_interference.png" width="49%">
+</p>
 
 ---
 
@@ -87,23 +89,29 @@ theoretical_foundation/dissipative_systems_ricci_filippov.pdf
 
 It develops the categorical, thermodynamic, nonsmooth-geometric and arithmetic layers of the framework.
 
-The central construction begins with a small category \(\mathcal C\) endowed with an additive entropy-production functional \(\Sigma\). This turns morphisms into dissipative arrows whose natural weights satisfy
+The central construction begins with a small category \(\mathcal C\) endowed with an additive entropy-production functional
 
-\[
-W(f) = e^{-\Sigma(f)}.
-\]
+$$
+\Sigma : \mathrm{Mor}(\mathcal C) \to \mathbb R_{\ge 0}.
+$$
+
+This turns morphisms into dissipative arrows whose natural weights satisfy
+
+$$
+W(f)=e^{-\Sigma(f)}.
+$$
 
 Composition becomes thermodynamically constrained:
 
-\[
-\Sigma(g \circ f) = \Sigma(g) + \Sigma(f),
-\]
+$$
+\Sigma(g\circ f)=\Sigma(g)+\Sigma(f),
+$$
 
 and therefore
 
-\[
-W(g \circ f) = W(g)W(f).
-\]
+$$
+W(g\circ f)=W(g)W(f).
+$$
 
 This creates a rigid causal geometry in which reversibility is no longer a free symmetry, but a structural obstruction.
 
@@ -115,47 +123,47 @@ The computational implementations serve as **operational validation** of the the
 
 ### Validated Components
 
-- **Filippov–Ricci weight evolution**
+#### Filippov–Ricci weight evolution
 
-  \[
-  W_t(f) = \exp(-\Sigma(f) - \mathrm{Ric}(f)t).
-  \]
+$$
+W_t(f)=\exp(-\Sigma(f)-\mathrm{Ric}(f)t).
+$$
 
-- **Non-semigroup property**
+#### Non-semigroup property
 
-  \[
-  P_{t+s} \neq P_tP_s.
-  \]
+$$
+P_{t+s}\neq P_tP_s.
+$$
 
-  Here \(P_t\) is an instantaneous geometric probe, not a Markov propagator.
+Here \(P_t\) is an instantaneous geometric probe, not a Markov propagator.
 
-- **Dissipative Laplacian**
+#### Dissipative Laplacian
 
-  \[
-  \Delta_t = -\dot P_t.
-  \]
+$$
+\Delta_t=-\dot P_t.
+$$
 
-- **Complex dissipative holonomy**
+#### Complex dissipative holonomy
 
-  \[
-  \mathrm{Hol}(\gamma)
-  =
-  e^{-\Sigma(\gamma)}e^{-i\Phi(\gamma)}.
-  \]
+$$
+\mathrm{Hol}(\gamma)
+=
+e^{-\Sigma(\gamma)}e^{-i\Phi(\gamma)}.
+$$
 
-- **Interference formula**
+#### Interference formula
 
-  \[
-  |\mathrm{Hol}(\gamma_1)+\mathrm{Hol}(\gamma_2)|^2
-  =
-  2e^{-2\Sigma^\ast}(1+\cos\Delta\Phi).
-  \]
+$$
+|\mathrm{Hol}(\gamma_1)+\mathrm{Hol}(\gamma_2)|^2
+=
+2e^{-2\Sigma^\ast}(1+\cos\Delta\Phi).
+$$
 
-- **Ternary Chern classification**
+#### Ternary Chern classification
 
-  \[
-  q_L(s) \in \{-1,0,+1\}.
-  \]
+$$
+q_L(s)\in\{-1,0,+1\}.
+$$
 
 ### Methodological Note
 
@@ -201,21 +209,25 @@ python code/holonomy_interference.py
 
 A dissipative category is a small category equipped with an additive entropy-production functional
 
-\[
+$$
 \Sigma : \mathrm{Mor}(\mathcal C) \to \mathbb R_{\ge 0}.
-\]
+$$
 
 The associated weight
 
-\[
+$$
 W(f)=e^{-\Sigma(f)}
-\]
+$$
 
-encodes thermodynamic attenuation. Causal rigidity is enforced by the condition
+encodes thermodynamic attenuation.
 
-\[
+Causal rigidity is enforced by the condition
+
+$$
 W(f)=1 \Longleftrightarrow f=\mathrm{id}.
-\]
+$$
+
+Thus, a morphism has zero dissipative cost only when it is structurally trivial.
 
 ---
 
@@ -223,11 +235,21 @@ W(f)=1 \Longleftrightarrow f=\mathrm{id}.
 
 The Filippov–Ricci flow describes dissipative evolution under nonsmooth curvature:
 
-\[
-\dot W_t(f) \in -\mathrm{Ric}^{\mathrm{Fil}}_{JS}(f,W_t)\,W_t(f).
-\]
+$$
+\dot W_t(f)
+\in
+-\mathrm{Ric}^{\mathrm{Fil}}_{JS}(f,W_t)\,W_t(f).
+$$
 
 The role of curvature is not to smooth the dynamics. Instead, nonsmooth curvature selects and amplifies dissipative branches.
+
+The selected-curvature regime produces exponential separation between competing morphisms:
+
+$$
+\frac{W_t(f)}{W_t(g)}
+=
+\exp(-\Delta\kappa\,t-\Delta\Sigma).
+$$
 
 ---
 
@@ -237,15 +259,15 @@ The kernels \(P_t\) are not assumed to form a semigroup. They are instantaneous 
 
 Thus, in general,
 
-\[
-P_{t+s} \neq P_tP_s.
-\]
+$$
+P_{t+s}\neq P_tP_s.
+$$
 
 The dissipative Laplacian is defined by
 
-\[
-\Delta_t = -\dot P_t.
-\]
+$$
+\Delta_t=-\dot P_t.
+$$
 
 It records instantaneous deformation of diffusion rather than infinitesimal propagation in the classical semigroup sense.
 
@@ -255,11 +277,11 @@ It records instantaneous deformation of diffusion rather than infinitesimal prop
 
 The complex holonomy of a path \(\gamma\) is
 
-\[
+$$
 \mathrm{Hol}(\gamma)
 =
 \exp(-\Sigma(\gamma))\exp(-i\Phi(\gamma)).
-\]
+$$
 
 Its two components have distinct geometric meanings:
 
@@ -270,11 +292,11 @@ Phase     = curvature
 
 This produces interference phenomena of the form
 
-\[
+$$
 |\mathrm{Hol}(\gamma_1)+\mathrm{Hol}(\gamma_2)|^2
 =
 2e^{-2\Sigma^\ast}(1+\cos\Delta\Phi).
-\]
+$$
 
 The interference is geometric rather than Hilbert-space-theoretic.
 
@@ -284,21 +306,21 @@ The interference is geometric rather than Hilbert-space-theoretic.
 
 For an analytic observable \(L(s)\), with \(L(s)\neq 0\), define the normalized phase
 
-\[
+$$
 \Theta_L(s)=\frac{L(s)}{|L(s)|}\in S^1.
-\]
+$$
 
 The induced phase geometry determines a ternary first Chern class:
 
-\[
-c_1(L(s)) \in \{-1,0,+1\}.
-\]
+$$
+c_1(L(s))\in\{-1,0,+1\}.
+$$
 
 Equivalently, the local phase index satisfies
 
-\[
-q_L(s) \in \{-1,0,+1\}.
-\]
+$$
+q_L(s)\in\{-1,0,+1\}.
+$$
 
 The three regimes correspond to pole-sector, flat-sector and zero-sector behavior.
 
@@ -310,9 +332,9 @@ The three regimes correspond to pole-sector, flat-sector and zero-sector behavio
 
 Generates the circular phase stratification of analytic values and computes the ternary phase index
 
-\[
-q_L \in \{-1,0,+1\}.
-\]
+$$
+q_L\in\{-1,0,+1\}.
+$$
 
 Output:
 
@@ -326,9 +348,9 @@ figures/chern_stratification.png
 
 Constructs instantaneous Markov kernels \(P_t\), verifies the non-semigroup deviation and computes the dissipative Laplacian
 
-\[
+$$
 \Delta_t=-\dot P_t.
-\]
+$$
 
 Output:
 
@@ -342,11 +364,11 @@ figures/dissipative_laplacian.png
 
 Simulates selected-curvature realization under Filippov–Ricci dynamics and illustrates curvature amplification:
 
-\[
+$$
 \frac{W_t(f)}{W_t(g)}
 =
 \exp(-\Delta\kappa\,t-\Delta\Sigma).
-\]
+$$
 
 Output:
 
@@ -359,6 +381,14 @@ figures/filippov_ricci_flow.png
 ### `holonomy_interference.py`
 
 Generates the dissipative holonomy interference model, including amplitude damping, phase interference, Euler-product factorization and phase portrait.
+
+The core interference law is
+
+$$
+|\mathrm{Hol}(\gamma_1)+\mathrm{Hol}(\gamma_2)|^2
+=
+2e^{-2\Sigma^\ast}(1+\cos\Delta\Phi).
+$$
 
 Output:
 
