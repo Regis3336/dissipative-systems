@@ -22,24 +22,22 @@ A central result is the emergence of an *integer-valued arithmetic invariant*: f
 
 **Core thesis:** Irreversibility does not destroy geometry — it reshapes it.
 
----
-
 ## Repository Structure
+
+```text
 .
 ├── theoretical_foundation/
-│   ├── dissipative_systems_ricci_filippov.pdf
+│   └── dissipative_systems_ricci_filippov.pdf
 ├── figures/
 │   ├── dissipative_laplacian.png
 │   ├── filippov_ricci_flow.png
 │   ├── holonomy_interference.png
 │   └── chern_stratification.png
 └── code/
-├── chern_stratification.py                                # Ternary phase index q_L ∈ {-1,0,+1}
-├── dissipative_laplacian.py                               # Instantaneous kernels & Δₜ
-├── filippov_ricci_flow.py                                 # Curvature amplification theorem
-└── holonomy_interference.py                               # Geometric interference (AB-type)
-
----
+    ├── chern_stratification.py       # Ternary phase index q_L ∈ {-1,0,+1}
+    ├── dissipative_laplacian.py      # Instantaneous kernels & Δₜ
+    ├── filippov_ricci_flow.py        # Curvature amplification theorem
+    └── holonomy_interference.py      # Geometric interference (AB-type)
 
 ## Code Validation
 
