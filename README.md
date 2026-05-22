@@ -339,7 +339,7 @@ q_L\in\{-1,0,+1\}.
 $$
 
 <p align="center">
-  <img src="figures/chern_stratification.png" alt="Circular Phase Stratification" width="100%">
+  <img src="iamges/chern_stratification.png" alt="Circular Phase Stratification" width="100%">
 </p>
 
 Output:
