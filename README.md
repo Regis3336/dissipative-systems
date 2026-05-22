@@ -50,13 +50,13 @@ controlled by the local singularity structure of \(L(s)\).
 ## Visual Summary
 
 <p align="center">
-  <img src="figures/chern_stratification.png" alt="Circular Phase Stratification" width="49%">
-  <img src="figures/dissipative_laplacian.png" alt="Dissipative Laplacian" width="49%">
+  <img src="images/chern_stratification.png" alt="Circular Phase Stratification" width="49%">
+  <img src="images/dissipative_laplacian.png" alt="Dissipative Laplacian" width="49%">
 </p>
 
 <p align="center">
-  <img src="figures/filippov_ricci_flow.png" alt="Filippov Ricci Flow" width="49%">
-  <img src="figures/holonomy_interference.png" alt="Holonomy Interference" width="49%">
+  <img src="images/filippov_ricci_flow.png" alt="Filippov Ricci Flow" width="49%">
+  <img src="images/holonomy_interference.png" alt="Holonomy Interference" width="49%">
 </p>
 
 ---
