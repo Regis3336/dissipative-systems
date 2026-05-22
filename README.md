@@ -2,7 +2,7 @@
 
 **Author:** Reinaldo Elias de Souza Junior  
 **Affiliation:** Faculdade de Medicina, Universidade Federal de Goiás, Brasil  
-**Date:** May 2026
+**Date:** May 2026  
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20339888.svg)](https://doi.org/10.5281/zenodo.20339888)
 
@@ -10,17 +10,52 @@
 
 ## Abstract
 
-We introduce a unified geometric framework for irreversible systems by equipping small categories with an additive entropy-production functional Σ : Mor(C) → ℝ≥₀. The induced natural weights W(f) = e^(−Σ(f)) behave as thermodynamically consistent attenuation factors and render the category *causally rigid*: all reversible morphisms collapse to identities.
+We introduce a unified geometric framework for irreversible systems by equipping small categories with an additive entropy-production functional
+
+\[
+\Sigma : \mathrm{Mor}(\mathcal C) \to \mathbb R_{\ge 0}.
+\]
+
+The induced natural weights
+
+\[
+W(f) = e^{-\Sigma(f)}
+\]
+
+behave as thermodynamically consistent attenuation factors and render the category **causally rigid**: reversible morphisms collapse to identities.
 
 The framework establishes three structural components:
 
-1. **Filippov–Ricci flow**: evolution of dissipative weights under nonsmooth curvature
-2. **Instantaneous Markov kernels**: geometric probes (not propagators) that produce a dissipative Laplacian Δₜ = −Ṗₜ
-3. **Complex dissipative holonomy**: magnitude controlled by dissipation, phase by curvature, producing interference without Hilbert space
+1. **Filippov–Ricci flow** — evolution of dissipative weights under nonsmooth curvature.
+2. **Instantaneous Markov kernels** — geometric probes, not propagators, producing a dissipative Laplacian  
+   \[
+   \Delta_t = -\dot P_t.
+   \]
+3. **Complex dissipative holonomy** — magnitude controlled by dissipation and phase controlled by curvature, producing interference without Hilbert space.
 
-A central result is the emergence of an *integer-valued arithmetic invariant*: for any analytic observable L(s) with L(s) ≠ 0, the induced connection on S² has first Chern class c₁(L(s)) ∈ {−1, 0, +1}, determined by the local singularity structure of L(s).
+A central result is the emergence of an **integer-valued arithmetic invariant**: for any analytic observable \(L(s)\), with \(L(s) \neq 0\), the induced connection on \(S^2\) has first Chern class
 
-**Core thesis:** Irreversibility does not destroy geometry — it reshapes it.
+\[
+c_1(L(s)) \in \{-1,0,+1\},
+\]
+
+determined by the local singularity structure of \(L(s)\).
+
+> **Core thesis:** Irreversibility does not destroy geometry — it reshapes it.
+
+---
+
+## Visual Summary
+
+| Circular Phase Stratification | Dissipative Laplacian |
+|---|---|
+| ![](figures/chern_stratification.png) | ![](figures/dissipative_laplacian.png) |
+
+| Filippov–Ricci Flow | Holonomy Interference |
+|---|---|
+| ![](figures/filippov_ricci_flow.png) | ![](figures/holonomy_interference.png) |
+
+---
 
 ## Repository Structure
 
@@ -29,42 +64,119 @@ A central result is the emergence of an *integer-valued arithmetic invariant*: f
 ├── theoretical_foundation/
 │   └── dissipative_systems_ricci_filippov.pdf
 ├── figures/
+│   ├── chern_stratification.png
 │   ├── dissipative_laplacian.png
 │   ├── filippov_ricci_flow.png
-│   ├── holonomy_interference.png
-│   └── chern_stratification.png
+│   └── holonomy_interference.png
 └── code/
     ├── chern_stratification.py       # Ternary phase index q_L ∈ {-1,0,+1}
-    ├── dissipative_laplacian.py      # Instantaneous kernels & Δₜ
+    ├── dissipative_laplacian.py      # Instantaneous kernels & Δ_t
     ├── filippov_ricci_flow.py        # Curvature amplification theorem
-    └── holonomy_interference.py      # Geometric interference (AB-type)
+    └── holonomy_interference.py      # Geometric interference effect
+```
+
+---
+
+## Theoretical Foundation
+
+The main paper is available in:
+
+```text
+theoretical_foundation/dissipative_systems_ricci_filippov.pdf
+```
+
+It develops the categorical, thermodynamic, nonsmooth-geometric and arithmetic layers of the framework.
+
+The central construction begins with a small category \(\mathcal C\) endowed with an additive entropy-production functional \(\Sigma\). This turns morphisms into dissipative arrows whose natural weights satisfy
+
+\[
+W(f) = e^{-\Sigma(f)}.
+\]
+
+Composition becomes thermodynamically constrained:
+
+\[
+\Sigma(g \circ f) = \Sigma(g) + \Sigma(f),
+\]
+
+and therefore
+
+\[
+W(g \circ f) = W(g)W(f).
+\]
+
+This creates a rigid causal geometry in which reversibility is no longer a free symmetry, but a structural obstruction.
+
+---
 
 ## Code Validation
 
-The computational implementations serve as **operational validation** of the theoretical framework. Each script:
+The computational implementations serve as **operational validation** of the theoretical framework. Each script implements the formulas exactly as stated in the paper and generates the corresponding figure.
 
-- Implements formulas **exactly as stated** in the paper
-- Includes scope notes and disclaimers where classical intuitions fail
-- Generates figures demonstrating key theorems
+### Validated Components
 
-**Key validated results:**
-- ✓ Filippov–Ricci weight evolution: Wₜ(f) = exp(−Σ(f) − Ric(f)·t)
-- ✓ Non-semigroup property: Pₜ₊ₛ ≠ Pₜ · Pₛ (geometric probe, not propagator)
-- ✓ Interference formula: |Hol(γ₁) + Hol(γ₂)|² = 2e^(−2Σ*)(1 + cos ΔΦ)
-- ✓ Ternary Chern classification: qₗ(s) ∈ {−1, 0, +1}
+- **Filippov–Ricci weight evolution**
 
-**Methodological note:** Code generation preceded mathematical auditing. This protocol prevented ontological drift — the code acts as an anchor, forcing operational fidelity to the paper's definitions rather than classical reinterpretation.
+  \[
+  W_t(f) = \exp(-\Sigma(f) - \mathrm{Ric}(f)t).
+  \]
+
+- **Non-semigroup property**
+
+  \[
+  P_{t+s} \neq P_tP_s.
+  \]
+
+  Here \(P_t\) is an instantaneous geometric probe, not a Markov propagator.
+
+- **Dissipative Laplacian**
+
+  \[
+  \Delta_t = -\dot P_t.
+  \]
+
+- **Complex dissipative holonomy**
+
+  \[
+  \mathrm{Hol}(\gamma)
+  =
+  e^{-\Sigma(\gamma)}e^{-i\Phi(\gamma)}.
+  \]
+
+- **Interference formula**
+
+  \[
+  |\mathrm{Hol}(\gamma_1)+\mathrm{Hol}(\gamma_2)|^2
+  =
+  2e^{-2\Sigma^\ast}(1+\cos\Delta\Phi).
+  \]
+
+- **Ternary Chern classification**
+
+  \[
+  q_L(s) \in \{-1,0,+1\}.
+  \]
+
+### Methodological Note
+
+Code generation preceded mathematical auditing. This protocol prevented ontological drift: the code acts as an operational anchor, forcing fidelity to the paper's definitions rather than reinterpretation through classical differential-geometric or probabilistic intuitions.
 
 ---
 
 ## Requirements
 
 ### Python Dependencies
+
 ```bash
 pip install numpy matplotlib scipy mpmath
 ```
 
-### Generate Figures
+---
+
+## Generate Figures
+
+Run the following commands from the repository root:
+
 ```bash
 python3 code/chern_stratification.py
 python3 code/dissipative_laplacian.py
@@ -72,44 +184,200 @@ python3 code/filippov_ricci_flow.py
 python3 code/holonomy_interference.py
 ```
 
+On Windows PowerShell, use:
+
+```powershell
+python code/chern_stratification.py
+python code/dissipative_laplacian.py
+python code/filippov_ricci_flow.py
+python code/holonomy_interference.py
+```
+
 ---
 
 ## Key Concepts
 
 ### Dissipative Categories
-Small categories equipped with an additive entropy-production functional Σ that enforces causal rigidity: W(f) = 1 ⟺ f = id.
+
+A dissipative category is a small category equipped with an additive entropy-production functional
+
+\[
+\Sigma : \mathrm{Mor}(\mathcal C) \to \mathbb R_{\ge 0}.
+\]
+
+The associated weight
+
+\[
+W(f)=e^{-\Sigma(f)}
+\]
+
+encodes thermodynamic attenuation. Causal rigidity is enforced by the condition
+
+\[
+W(f)=1 \Longleftrightarrow f=\mathrm{id}.
+\]
+
+---
 
 ### Filippov–Ricci Flow
-Evolution under nonsmooth curvature:
-Ẇₜ(f) ∈ −Ric_JS^Fil(f, Wₜ) · Wₜ(f)
-Curvature is not smoothed — it is *amplified*.
 
-### Dissipative Laplacian
-Not a classical Laplacian. Records instantaneous deformation of diffusion:
-Δₜ = −Ṗₜ
-where Pₜ is a geometric probe, not a Markov propagator.
+The Filippov–Ricci flow describes dissipative evolution under nonsmooth curvature:
 
-### Complex Holonomy
-Hol(γ) = exp(−Σ(γ)) · exp(−i·Φ(γ))
-Magnitude = dissipation. Phase = curvature. Interference = geometry.
+\[
+\dot W_t(f) \in -\mathrm{Ric}^{\mathrm{Fil}}_{JS}(f,W_t)\,W_t(f).
+\]
+
+The role of curvature is not to smooth the dynamics. Instead, nonsmooth curvature selects and amplifies dissipative branches.
+
+---
+
+### Instantaneous Markov Kernels
+
+The kernels \(P_t\) are not assumed to form a semigroup. They are instantaneous Markov probes of the dissipative geometry.
+
+Thus, in general,
+
+\[
+P_{t+s} \neq P_tP_s.
+\]
+
+The dissipative Laplacian is defined by
+
+\[
+\Delta_t = -\dot P_t.
+\]
+
+It records instantaneous deformation of diffusion rather than infinitesimal propagation in the classical semigroup sense.
+
+---
+
+### Complex Dissipative Holonomy
+
+The complex holonomy of a path \(\gamma\) is
+
+\[
+\mathrm{Hol}(\gamma)
+=
+\exp(-\Sigma(\gamma))\exp(-i\Phi(\gamma)).
+\]
+
+Its two components have distinct geometric meanings:
+
+```text
+Magnitude = dissipation
+Phase     = curvature
+```
+
+This produces interference phenomena of the form
+
+\[
+|\mathrm{Hol}(\gamma_1)+\mathrm{Hol}(\gamma_2)|^2
+=
+2e^{-2\Sigma^\ast}(1+\cos\Delta\Phi).
+\]
+
+The interference is geometric rather than Hilbert-space-theoretic.
+
+---
 
 ### Ternary Chern Classification
-For L(s) ≠ 0:
-c₁(L(s)) ∈ {−1, 0, +1}
-Phase-first: records winding of normalized phase Θₗ(s) = L(s)/|L(s)| ∈ S¹.
+
+For an analytic observable \(L(s)\), with \(L(s)\neq 0\), define the normalized phase
+
+\[
+\Theta_L(s)=\frac{L(s)}{|L(s)|}\in S^1.
+\]
+
+The induced phase geometry determines a ternary first Chern class:
+
+\[
+c_1(L(s)) \in \{-1,0,+1\}.
+\]
+
+Equivalently, the local phase index satisfies
+
+\[
+q_L(s) \in \{-1,0,+1\}.
+\]
+
+The three regimes correspond to pole-sector, flat-sector and zero-sector behavior.
+
+---
+
+## Scripts
+
+### `chern_stratification.py`
+
+Generates the circular phase stratification of analytic values and computes the ternary phase index
+
+\[
+q_L \in \{-1,0,+1\}.
+\]
+
+Output:
+
+```text
+figures/chern_stratification.png
+```
+
+---
+
+### `dissipative_laplacian.py`
+
+Constructs instantaneous Markov kernels \(P_t\), verifies the non-semigroup deviation and computes the dissipative Laplacian
+
+\[
+\Delta_t=-\dot P_t.
+\]
+
+Output:
+
+```text
+figures/dissipative_laplacian.png
+```
+
+---
+
+### `filippov_ricci_flow.py`
+
+Simulates selected-curvature realization under Filippov–Ricci dynamics and illustrates curvature amplification:
+
+\[
+\frac{W_t(f)}{W_t(g)}
+=
+\exp(-\Delta\kappa\,t-\Delta\Sigma).
+\]
+
+Output:
+
+```text
+figures/filippov_ricci_flow.png
+```
+
+---
+
+### `holonomy_interference.py`
+
+Generates the dissipative holonomy interference model, including amplitude damping, phase interference, Euler-product factorization and phase portrait.
+
+Output:
+
+```text
+figures/holonomy_interference.png
+```
 
 ---
 
 ## Citation
 
 ```bibtex
-@article{souza2025dissipative,
-  title={Dissipative Systems: From the Second Law of Thermodynamics to Filippov--Ricci Geometry},
-  author={Souza Junior, Reinaldo Elias de},
-  year={2026},
-  month={May},
-  institution={Faculdade de Medicina, Universidade Federal de Goiás},
-  doi={10.5281/zenodo.20339888}
+@article{souza2026dissipative,
+  title        = {Dissipative Systems: From the Second Law of Thermodynamics to Filippov--Ricci Geometry},
+  author       = {Souza Junior, Reinaldo Elias de},
+  year         = {2026},
+  month        = {May},
+  institution  = {Faculdade de Medicina, Universidade Federal de Goi{\'a}s},
+  doi          = {10.5281/zenodo.20339888}
 }
 ```
 
@@ -117,15 +385,22 @@ Phase-first: records winding of normalized phase Θₗ(s) = L(s)/|L(s)| ∈ S¹.
 
 ## License
 
-This work is released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+This work is released under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 ---
 
 ## Contact
 
 **Reinaldo Elias de Souza Junior**  
-resj3336@gmail.com
+Email: resj3336@gmail.com  
 
 ---
 
-**Note:** This framework introduces a new ontology for dissipative geometry. Classical differential-geometric intuitions (smooth connections, Chern–Weil theory, Markov semigroups) do not directly apply. The code validates the operational consistency of the definitions; the theory stands on its own axioms.
+## Final Note
+
+This framework introduces a new ontology for dissipative geometry. Classical differential-geometric intuitions — smooth connections, Chern–Weil theory and Markov semigroups — do not directly apply.
+
+The code validates the operational consistency of the definitions. The theory stands on its own axioms.
+
+> Irreversibility does not erase structure.  
+> It selects geometry.
