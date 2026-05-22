@@ -67,7 +67,7 @@ controlled by the local singularity structure of \(L(s)\).
 .
 ├── theoretical_foundation/
 │   └── dissipative_systems_ricci_filippov.pdf
-├── figures/
+├── images/
 │   ├── chern_stratification.png
 │   ├── dissipative_laplacian.png
 │   ├── filippov_ricci_flow.png
@@ -338,16 +338,6 @@ $$
 q_L\in\{-1,0,+1\}.
 $$
 
-<p align="center">
-  <img src="iamges/chern_stratification.png" alt="Circular Phase Stratification" width="100%">
-</p>
-
-Output:
-
-```text
-figures/chern_stratification.png
-```
-
 ---
 
 ### `dissipative_laplacian.py`
@@ -358,17 +348,6 @@ $$
 \Delta_t=-\dot P_t.
 $$
 
-<p align="center">
-  <img src="figures/dissipative_laplacian.png" alt="Dissipative Laplacian" width="100%">
-</p>
-
-Output:
-
-```text
-figures/dissipative_laplacian.png
-```
-
----
 
 ### `filippov_ricci_flow.py`
 
@@ -379,18 +358,6 @@ $$
 =
 \exp(-\Delta\kappa\,t-\Delta\Sigma).
 $$
-
-<p align="center">
-  <img src="figures/filippov_ricci_flow.png" alt="Filippov Ricci Flow" width="100%">
-</p>
-
-Output:
-
-```text
-figures/filippov_ricci_flow.png
-```
-
----
 
 ### `holonomy_interference.py`
 
@@ -403,18 +370,6 @@ $$
 =
 2e^{-2\Sigma^\ast}(1+\cos\Delta\Phi).
 $$
-
-<p align="center">
-  <img src="figures/holonomy_interference.png" alt="Holonomy Interference" width="100%">
-</p>
-
-Output:
-
-```text
-figures/holonomy_interference.png
-```
-
----
 
 ## Citation
 
