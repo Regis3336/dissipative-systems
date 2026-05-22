@@ -26,8 +26,8 @@ A central result is the emergence of an *integer-valued arithmetic invariant*: f
 
 ## Repository Structure
 .
-├── dissipative_systems_ricci_filippov.pdf                # Main paper (PDF source)
-├── references.bib                                        # Bibliography
+├── theoretical_foundation/
+│   ├── dissipative_systems_ricci_filippov.pdf
 ├── figures/
 │   ├── dissipative_laplacian.png
 │   ├── filippov_ricci_flow.png
