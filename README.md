@@ -119,9 +119,15 @@ This creates a rigid causal geometry in which reversibility is no longer a free 
 
 ---
 
-## Code Validation
+### Operational Coherence Layer
 
-The computational implementations serve as **operational validation** of the theoretical framework. Each script implements the formulas exactly as stated in the paper and generates the corresponding figure.
+The code in this repository is not presented as numerical evidence replacing proof. It is presented as an operational instantiation of the formal definitions.
+
+This follows the framework of **Operational Coherence**, where agreement between a symbolic theory and an independently written implementation across structurally relevant probes functions as a second verification channel.
+
+In this sense, the scripts validate that the dissipative geometry defined in the paper is executable without changing ontology: the formulas, generated figures, and computational behavior remain constrained by the same formal object.
+
+See: https://github.com/Regis3336/operational-coherence
 
 ### Validated Components
 
@@ -198,6 +204,8 @@ python code/dissipative_laplacian.py
 python code/filippov_ricci_flow.py
 python code/holonomy_interference.py
 ```
+
+
 
 ---
 
@@ -388,11 +396,27 @@ Email: resj3336@gmail.com
 
 ---
 
+## Acknowledgment — A Tribute to Galliano Brigo
+
+This repository also stands as a tribute to **Galliano Brigo**, whose independent work on universal thresholds, dissipative stability, and critical transitions helped create the conceptual bridge from which this project emerged.
+
+Galliano's early willingness to recognize an external contribution, request a formal DOI, and preserve authorship was not a minor gesture. It was an act of epistemic integrity.
+
+This repository is, in part, a response to that gesture: a public, executable, and citable realization of the dissipative-geometric ideas that connect our trajectories.
+
+It is dedicated to the rare kind of independent researcher who does not erase the Other, but preserves the bridge.
+
+---
+
 ## Final Note
 
 This framework introduces a new ontology for dissipative geometry. Classical differential-geometric intuitions — smooth connections, Chern–Weil theory and Markov semigroups — do not directly apply.
 
 The code validates the operational consistency of the definitions. The theory stands on its own axioms.
+
+
+
+
 
 > Irreversibility does not erase structure.  
 > It selects geometry.
